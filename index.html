@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NEXADEV — Crafting the Digital Future</title>
+<link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@300;400;600&display=swap)" rel="stylesheet">
+<style>
+:root{
+ --bg-dark:#080812;
+ --bg-light:#12122a;
+ --accent:#00f5ff;
+ --white:#f5f5fa;
+ --grey:#999;
+ --font-display:'Poppins',sans-serif;
+ --font-body:'Inter',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg-dark);
+  color:var(--white);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+}
+/* ===== GLOBAL UTILITIES ===== */
+.container{width:min(1180px,92%);margin:0 auto}
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  background:radial-gradient(circle at 30% 20%,#1a1a40 0%,#080812 100%);
+  position:relative;
+  overflow:hidden;
+}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,5vw,5rem);
+  background:linear-gradient(90deg,#00f5ff,#b55cff);
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:typing 4s steps(25) infinite alternate;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.hero p{
+  color:var(--grey);
+  margin-top:20px;
+  font-size:1.1rem;
+  max-width:600px;
+}
+.hero .cta{
+  margin-top:40px;
+  padding:16px 36px;
+  border:none;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  letter-spacing:.05em;
+  cursor:pointer;
+  border-radius:4px;
+  transition:all .3s;
+}
+.hero .cta:hover{transform:translateY(-3px);box-shadow:0 0 16px #00f5ff}
+@keyframes typing{
+  from{width:0}
+  to{width:100%}
+}
+/* ===== ABOUT ===== */
+#about{padding:120px 0;}
+#about h2{
+  font-size:2.5rem;
+  font-family:var(--font-display);
+  margin-bottom:20px;
+}
+#about p{color:var(--grey);max-width:700px;line-height:1.8}
+/* ===== SERVICES ===== */
+#services{background:var(--bg-light);padding:120px 0;}
+.services-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.service-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,.1);
+  padding:32px 28px;
+  border-radius:12px;
+  backdrop-filter:blur(6px);
+  transition:transform .3s;
+}
+.service-card:hover{transform:translateY(-8px)}
+.service-icon{font-size:2rem;color:var(--accent);margin-bottom:16px}
+.service-card h3{font-family:var(--font-display);margin-bottom:10px}
+.service-card p{color:var(--grey);font-size:.95rem}
+/* ===== PORTFOLIO ===== */
+#portfolio{padding:120px 0;}
+.portfolio-grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+.project{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  cursor:pointer;
+}
+.project img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s;
+}
+.project:hover img{transform:scale(1.07)}
+.project::after{
+  content:"View Project";
+  position:absolute;bottom:20px;left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.6);
+  color:var(--accent);
+  padding:6px 16px;
+  font-family:var(--font-display);
+  border-radius:20px;
+  opacity:0;
+  transition:.3s;
+}
+.project:hover::after{opacity:1}
+/* ===== CONTACT ===== */
+#contact{background:var(--bg-light);padding:120px 0;text-align:center;}
+#contact form{
+  margin-top:30px;
+  display:flex;flex-direction:column;
+  gap:16px;max-width:400px;margin-inline:auto;
+}
+input,textarea{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);
+  padding:14px 16px;border-radius:6px;
+  color:var(--white);font-family:var(--font-body);
+}
+button.send{
+  background:var(--accent);
+  color:#000;padding:14px;
+  font-weight:700;cursor:pointer;
+  border:none;border-radius:6px;
+}
+button.send:hover{opacity:.9}
+/* ===== FOOTER ===== */
+footer{
+  padding:40px 0;
+  text-align:center;
+  font-size:.9rem;
+  color:var(--grey);
+  border-top:1px solid rgba(255,255,255,.1);
+}
+</style>
+</head>
+<body>
+<section class="hero">
+  <h1>We Build Stunning Websites</h1>
+  <p>NEXADEV helps brands innovate online through modern web design, custom development, and digital experiences that convert.</p>
+  <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
+</section>
+<section id="about" class="container">
+  <h2>About Us</h2>
+  <p>We’re a KL‑based creative web studio combining design precision with engineering expertise. From concept to code, we create scalable digital products for startups and enterprises alike.</p>
+</section>
+<section id="services">
+  <div class="container">
+    <h2 style="text-align:center">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">💡</div>
+        <h3>Web Design</h3><p>Experience‑first design systems that blend beauty and usability.</p></div>
+      <div class="service-card"><div class="service-icon">⚙️</div>
+        <h3>Custom Development</h3><p>Scalable websites and apps built on modern frameworks like React and Next.js.</p></div>
+      <div class="service-card"><div class="service-icon">🚀</div>
+        <h3>SEO & Performance</h3><p>Optimized for speed, accessibility, and better Google rankings.</p></div>
+      <div class="service-card"><div class="service-icon">🔒</div>
+        <h3>Maintenance</h3><p>Ongoing support, monitoring, and secure updates for peace of mind.</p></div>
+    </div>
+  </div>
+</section>
+<section id="portfolio">
+  <div class="container">
+    <h2 style="text-align:center">Featured Work</h2>
+    <div class="portfolio-grid">
+      <div class="project"><img src="[images.unsplash.com](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800)" alt=""></div>
+      <div class="project"><img src="[images.unsplash.com](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800)" alt=""></div>
+      <div class="project"><img src="[images.unsplash.com](https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800)" alt=""></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <h2>Let’s Build Something Great</h2>
+    <p>Tell us about your project — we’ll get back within one business day.</p>
+    <form id="cform">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="4" placeholder="Project Details"></textarea>
+      <button type="submit" class="send">Send Message</button>
+    </form>
+  </div>
+</section>
+<footer>
+  © 2026 NEXADEV Web Solutions · Made with 💙 in Kuala Lumpur
+</footer>
+<script>
+document.getElementById('cform').addEventListener('submit',e=>{
+ e.preventDefault();
+ alert('Thanks! We’ll reply shortly.');
+ e.target.reset();
+});
+</script>
+</body>
+</html>

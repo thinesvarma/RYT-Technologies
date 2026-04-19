@@ -1,219 +1,831 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>NEXADEV — Crafting the Digital Future</title>
-<link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@300;400;600&display=swap)" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>RYT Technologies — White Theme Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-:root{
- --bg-dark:#080812;
- --bg-light:#12122a;
- --accent:#00f5ff;
- --white:#f5f5fa;
- --grey:#999;
- --font-display:'Poppins',sans-serif;
- --font-body:'Inter',sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:var(--bg-dark);
-  color:var(--white);
-  font-family:var(--font-body);
-  overflow-x:hidden;
-}
-/* ===== GLOBAL UTILITIES ===== */
-.container{width:min(1180px,92%);margin:0 auto}
-/* ===== HERO ===== */
-.hero{
-  height:100vh;
+.logo-text{
   display:flex;
   align-items:center;
-  justify-content:center;
+  gap:8px;
+  font-family:'Syne', sans-serif;
+}
+
+/* RYT (Blue Gradient) */
+.modern-logo.luxury .ryt{
+  font-size:2rem;
+  font-weight:900;
+  letter-spacing:-0.03em;
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* TECHNOLOGIES (Black, Same Font) */
+.modern-logo.luxury .tech{
+  font-size:1.25rem;
+  font-weight:800;
+  color:#0f172a;
+  letter-spacing:0.02em;
+  text-transform:uppercase;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#0f172a;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --primary:#2563eb;
+  --accent:#06b6d4;
+  --gradient:linear-gradient(135deg,#06b6d4,#2563eb);
+  --shadow:0 14px 40px rgba(15,23,42,.08);
+  --radius:22px;
+}
+
+.nav{
+  position:sticky;top:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 5%;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem}
+.nav-links{display:flex;gap:28px;color:var(--muted);font-size:.95rem}
+.nav-cta{
+  padding:.85rem 1.2rem;
+  border-radius:12px;
+  background:var(--text);
+  color:#fff;
+  font-weight:600;
+}
+
+section{padding:88px 5%}
+.container{max-width:1180px;margin:0 auto}
+
+.hero{
+  padding-top:100px;
+  padding-bottom:100px;
+  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+}
+.hero-grid{
+  display:flex;
   flex-direction:column;
+  align-items:center;
   text-align:center;
-  background:radial-gradient(circle at 30% 20%,#1a1a40 0%,#080812 100%);
-  position:relative;
-  overflow:hidden;
+  gap:24px;
 }
 .hero h1{
-  font-family:var(--font-display);
-  font-size:clamp(2.5rem,5vw,5rem);
-  background:linear-gradient(90deg,#00f5ff,#b55cff);
+  margin-top:22px;
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.8rem,5vw,4.6rem);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  max-width:900px;
+}
+.hero h1 span{
+  background:var(--gradient);
   -webkit-background-clip:text;
+  background-clip:text;
   color:transparent;
-  animation:typing 4s steps(25) infinite alternate;
-  white-space:nowrap;
-  overflow:hidden;
 }
 .hero p{
-  color:var(--grey);
-  margin-top:20px;
-  font-size:1.1rem;
+  margin-top:18px;
+  color:var(--muted);
   max-width:600px;
+  font-size:1.05rem;
+  margin-left:auto;
+  margin-right:auto;
 }
-.hero .cta{
-  margin-top:40px;
-  padding:16px 36px;
-  border:none;
-  background:var(--accent);
-  color:#000;
-  font-weight:700;
-  letter-spacing:.05em;
-  cursor:pointer;
-  border-radius:4px;
-  transition:all .3s;
-}
-.hero .cta:hover{transform:translateY(-3px);box-shadow:0 0 16px #00f5ff}
-@keyframes typing{
-  from{width:0}
-  to{width:100%}
-}
-/* ===== ABOUT ===== */
-#about{padding:120px 0;}
-#about h2{
-  font-size:2.5rem;
-  font-family:var(--font-display);
-  margin-bottom:20px;
-}
-#about p{color:var(--grey);max-width:700px;line-height:1.8}
-/* ===== SERVICES ===== */
-#services{background:var(--bg-light);padding:120px 0;}
-.services-grid{
-  margin-top:40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.service-card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,.1);
-  padding:32px 28px;
-  border-radius:12px;
-  backdrop-filter:blur(6px);
-  transition:transform .3s;
-}
-.service-card:hover{transform:translateY(-8px)}
-.service-icon{font-size:2rem;color:var(--accent);margin-bottom:16px}
-.service-card h3{font-family:var(--font-display);margin-bottom:10px}
-.service-card p{color:var(--grey);font-size:.95rem}
-/* ===== PORTFOLIO ===== */
-#portfolio{padding:120px 0;}
-.portfolio-grid{
-  display:grid;
-  gap:20px;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-}
-.project{
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-  cursor:pointer;
-}
-.project img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .5s;
-}
-.project:hover img{transform:scale(1.07)}
-.project::after{
-  content:"View Project";
-  position:absolute;bottom:20px;left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,.6);
-  color:var(--accent);
-  padding:6px 16px;
-  font-family:var(--font-display);
-  border-radius:20px;
-  opacity:0;
-  transition:.3s;
-}
-.project:hover::after{opacity:1}
-/* ===== CONTACT ===== */
-#contact{background:var(--bg-light);padding:120px 0;text-align:center;}
-#contact form{
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
   margin-top:30px;
-  display:flex;flex-direction:column;
-  gap:16px;max-width:400px;margin-inline:auto;
+  justify-content:center;
 }
-input,textarea{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.15);
-  padding:14px 16px;border-radius:6px;
-  color:var(--white);font-family:var(--font-body);
+.btn-primary,.btn-secondary{
+  display:inline-flex;align-items:center;gap:10px;padding:1rem 1.3rem;border-radius:14px;font-weight:600;
 }
-button.send{
-  background:var(--accent);
-  color:#000;padding:14px;
-  font-weight:700;cursor:pointer;
-  border:none;border-radius:6px;
+.btn-primary{background:var(--text);color:#fff;box-shadow:0 10px 26px rgba(15,23,42,.14)}
+.btn-secondary{background:#fff;border:1px solid var(--border);color:var(--text)}
+.stats{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+  margin-top:34px;
+  justify-content:center;
 }
-button.send:hover{opacity:.9}
-/* ===== FOOTER ===== */
-footer{
-  padding:40px 0;
-  text-align:center;
+.stat strong{display:block;font-family:'Syne',sans-serif;font-size:2rem}
+.stat span{color:var(--muted);font-size:.9rem}
+
+/* TECH MARQUEE */
+.tech-marquee{
+  margin-top:40px;
+  overflow:hidden;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+  background:#f8fafc;
+  width:100%;
+}
+.marquee-track{
+  display:flex;
+  gap:40px;
+  width:max-content;
+  animation:scrollTech 18s linear infinite;
+}
+.marquee-item{
+  font-weight:600;
+  color:#64748b;
+  font-size:.95rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+.marquee-item span{
+  color:var(--primary);
+  font-weight:700;
+}
+@keyframes scrollTech{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+.headline{text-align:center;margin-bottom:14px}
+.headline .eyebrow{color:var(--primary);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+.headline h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);margin-top:12px}
+.headline p{color:var(--muted);max-width:680px;margin:14px auto 0}
+.section-soft{background:var(--bg-soft)}
+
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .35s ease, box-shadow .35s ease}
+.work-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(15,23,42,.12)}
+.work-thumb{position:relative;overflow:hidden}
+.work-thumb img{transition:transform .5s ease}
+.work-card:hover .work-thumb img{transform:scale(1.08)}
+.work-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(2,6,23,.6));display:flex;align-items:flex-end;justify-content:flex-end;padding:14px;opacity:0;transition:opacity .35s ease}
+.work-card:hover .work-overlay{opacity:1}
+.work-overlay span{background:#fff;color:var(--text);padding:8px 12px;border-radius:999px;font-size:.85rem;font-weight:600}
+.work-thumb{height:210px;background:linear-gradient(135deg,#e0f2fe,#eff6ff);padding:18px;display:flex;align-items:flex-end}
+.work-meta{padding:22px}
+.work-meta h3{font-family:'Syne',sans-serif;font-size:1.15rem;margin-bottom:8px}
+.work-meta p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.work-tags{display:flex;flex-wrap:wrap;gap:8px}
+.work-tags span{padding:.45rem .7rem;border-radius:999px;background:#eff6ff;color:var(--primary);font-size:.8rem;font-weight:600}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.faq-wrap{max-width:860px;margin:0 auto;display:grid;gap:14px}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow)}
+.faq-question{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
+.faq-question h3{font-size:1rem}
+.faq-answer{color:var(--muted);font-size:.95rem}
+
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:24px;align-items:stretch}
+.cards3 .card:nth-child(2){transform:translateY(-10px);box-shadow:0 20px 50px rgba(37,99,235,.15);position:relative}
+.card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)
+}
+.card-icon{width:52px;height:52px;border-radius:16px;background:#eff6ff;color:var(--primary);display:grid;place-items:center;margin-bottom:16px}
+.card h3{font-family:'Syne',sans-serif;font-size:1.2rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.96rem}
+.price{font-family:'Syne',sans-serif;font-size:2.4rem;margin:18px 0 12px}
+.list{display:grid;gap:10px;margin-top:12px;color:var(--muted)}
+.list div{display:flex;gap:10px;align-items:flex-start}
+
+.quote{font-size:1rem;color:var(--muted);margin-bottom:18px}
+.author{display:flex;align-items:center;gap:12px}
+.avatar{width:46px;height:46px;border-radius:50%;background:#dbeafe;color:var(--primary);display:grid;place-items:center;font-weight:800}
+.author strong{display:block}
+.author span{color:var(--muted);font-size:.88rem}
+
+.about-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:center}
+.founder-card{padding:0;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease}
+.founder-card:hover{transform:translateY(-8px);box-shadow:0 22px 55px rgba(15,23,42,.14)}
+.founder-visual{
+  min-height:360px;background:linear-gradient(135deg,#eff6ff,#f8fafc);display:grid;place-items:center;position:relative;overflow:hidden
+}
+.founder-visual::before{content:'';position:absolute;inset:-30%;background:radial-gradient(circle at top right, rgba(37,99,235,.14), transparent 35%), radial-gradient(circle at bottom left, rgba(6,182,212,.12), transparent 35%);animation:founderGlow 7s ease-in-out infinite}
+@keyframes founderGlow{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(8px,-10px,0) scale(1.04)}}
+.founder-photo{width:100%;height:100%;max-height:500px;object-fit:cover;border-radius:20px;position:relative;z-index:1;transition:transform .55s ease, filter .55s ease}
+.founder-card:hover .founder-photo{transform:scale(1.04);filter:saturate(1.05)}
+.founder-meta{padding:28px}
+.founder-meta h3{font-family:'Syne',sans-serif;font-size:1.8rem}
+.founder-meta .role{color:var(--primary);font-weight:600;margin:8px 0 14px}
+.founder-meta p{color:var(--muted)}
+
+footer{padding:30px 5%;border-top:1px solid var(--border);background:#fff;color:var(--muted)}
+
+.contact-shell{background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);border-radius:30px;padding:40px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.contact-side-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px;box-shadow:var(--shadow)}
+.social-link{width:42px;height:42px;border-radius:12px;border:1px solid var(--border);display:grid;place-items:center;background:#fff;color:var(--text);transition:all .2s ease}
+.social-link:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+.social-link img{width:22px;height:22px;object-fit:contain}
+
+/* FORM - DIFFERENT DESIGN */
+.inquiry-wrap{
+  grid-template-columns:1fr;
+  max-width:760px;
+  margin:34px auto 0;
+}
+
+.inquiry-form{
+  position:relative;
+  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+  border:1px solid #dbe7ff;
+  border-radius:28px;
+  padding:34px;
+  box-shadow:0 24px 70px rgba(37,99,235,.08);
+  overflow:hidden;
+}
+
+.inquiry-form::before{
+  content:'';
+  position:absolute;
+  inset:0 0 auto 0;
+  height:5px;
+  background:linear-gradient(90deg,#06b6d4,#2563eb);
+}
+
+.inquiry-form::after{
+  content:'';
+  position:absolute;
+  top:-80px;
+  right:-80px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(37,99,235,.10), transparent 70%);
+  pointer-events:none;
+}
+
+.form-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+
+.form-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#eff6ff;
+  color:#2563eb;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:700;
+}
+
+.form-badge.success{
+  background:#ecfdf5;
+  color:#16a34a;
+}
+
+.inquiry-form h3{
+  font-family:'Syne',sans-serif;
+  font-size:1.8rem;
+  margin-bottom:8px;
+  position:relative;
+  z-index:1;
+}
+
+.inquiry-form p{
+  color:var(--muted);
+  margin-bottom:22px;
+  font-size:.96rem;
+  position:relative;
+  z-index:1;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field label{
+  margin-bottom:0;
+  font-size:.88rem;
+  color:#334155;
+  font-weight:600;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:1rem 1.05rem;
+  border:1px solid #dbe7ff;
+  border-radius:16px;
+  background:#ffffff;
+  font:inherit;
+  color:var(--text);
+  transition:all .25s ease;
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset;
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+  color:#94a3b8;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  outline:none;
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(37,99,235,.10);
+  transform:translateY(-1px);
+}
+
+.field textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+.form-note{
+  font-size:.85rem;
+  color:var(--muted);
+  margin-top:14px;
+}
+
+.form-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.submit-btn{
+  padding:1rem 1.45rem;
+  border:none;
+  border-radius:16px;
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .25s ease;
+  box-shadow:0 12px 28px rgba(37,99,235,.22);
+}
+
+.submit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(37,99,235,.28);
+}
+
+.form-side-note{
+  margin-top:18px;
+  padding:14px 16px;
+  border:1px dashed #c7d7fe;
+  border-radius:16px;
+  background:rgba(239,246,255,.8);
+  color:#475569;
   font-size:.9rem;
-  color:var(--grey);
-  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.footer-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.footer-links a:hover{color:var(--primary)}
+
+@media (max-width: 920px){
+  .portfolio-grid,.services-grid,.testimonial-grid{grid-template-columns:1fr}
+  .hero-grid,.cards3,.about-wrap,.inquiry-wrap,.form-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
 }
 </style>
 </head>
 <body>
-<section class="hero">
-  <h1>We Build Stunning Websites</h1>
-  <p>NEXADEV helps brands innovate online through modern web design, custom development, and digital experiences that convert.</p>
-  <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
-</section>
-<section id="about" class="container">
-  <h2>About Us</h2>
-  <p>We’re a KL‑based creative web studio combining design precision with engineering expertise. From concept to code, we create scalable digital products for startups and enterprises alike.</p>
-</section>
-<section id="services">
-  <div class="container">
-    <h2 style="text-align:center">Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card"><div class="service-icon">💡</div>
-        <h3>Web Design</h3><p>Experience‑first design systems that blend beauty and usability.</p></div>
-      <div class="service-card"><div class="service-icon">⚙️</div>
-        <h3>Custom Development</h3><p>Scalable websites and apps built on modern frameworks like React and Next.js.</p></div>
-      <div class="service-card"><div class="service-icon">🚀</div>
-        <h3>SEO & Performance</h3><p>Optimized for speed, accessibility, and better Google rankings.</p></div>
-      <div class="service-card"><div class="service-icon">🔒</div>
-        <h3>Maintenance</h3><p>Ongoing support, monitoring, and secure updates for peace of mind.</p></div>
+  <nav class="nav">
+    <div class="logo-text modern-logo luxury">
+      <span class="ryt">RYT</span>
+      <span class="tech">TECHNOLOGIES</span>
     </div>
-  </div>
-</section>
-<section id="portfolio">
-  <div class="container">
-    <h2 style="text-align:center">Featured Work</h2>
-    <div class="portfolio-grid">
-      <div class="project"><img src="[images.unsplash.com](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800)" alt=""></div>
-      <div class="project"><img src="[images.unsplash.com](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800)" alt=""></div>
-      <div class="project"><img src="[images.unsplash.com](https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800)" alt=""></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#prices">Prices</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
-  </div>
-</section>
-<section id="contact">
-  <div class="container">
-    <h2>Let’s Build Something Great</h2>
-    <p>Tell us about your project — we’ll get back within one business day.</p>
-    <form id="cform">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea rows="4" placeholder="Project Details"></textarea>
-      <button type="submit" class="send">Send Message</button>
-    </form>
-  </div>
-</section>
-<footer>
-  © 2026 NEXADEV Web Solutions · Made with 💙 in Kuala Lumpur
-</footer>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>We build websites that feel <span>modern, premium, and clear</span></h1>
+        <p>A cleaner white interface, softer shadows, and modern Lucide icons make the site feel more professional and client-ready.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#"><i data-lucide="arrow-right"></i> View Our Work</a>
+          <a class="btn-secondary" href="#"><i data-lucide="message-square"></i> Get Free Quote</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>10+</strong><span>Projects Delivered</span></div>
+          <div class="stat"><strong>100%</strong><span>Client Satisfaction</span></div>
+          <div class="stat"><strong>5</strong><span>Years Experience</span></div>
+        </div>
+      </div>
+
+      <div class="tech-marquee">
+        <div class="marquee-track">
+          <div class="marquee-item"><span>HTML5</span></div>
+          <div class="marquee-item"><span>CSS3</span></div>
+          <div class="marquee-item"><span>JavaScript</span></div>
+          <div class="marquee-item"><span>React</span></div>
+          <div class="marquee-item"><span>Node.js</span></div>
+          <div class="marquee-item"><span>Angular</span></div>
+          <div class="marquee-item"><span>Next.js</span></div>
+          <div class="marquee-item"><span>WordPress</span></div>
+          <div class="marquee-item"><span>Shopify</span></div>
+
+          <div class="marquee-item"><span>HTML5</span></div>
+          <div class="marquee-item"><span>CSS3</span></div>
+          <div class="marquee-item"><span>JavaScript</span></div>
+          <div class="marquee-item"><span>React</span></div>
+          <div class="marquee-item"><span>Node.js</span></div>
+          <div class="marquee-item"><span>Angular</span></div>
+          <div class="marquee-item"><span>Next.js</span></div>
+          <div class="marquee-item"><span>WordPress</span></div>
+          <div class="marquee-item"><span>Shopify</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="headline">
+        <div class="eyebrow">Previous Work</div>
+        <h2>Websites we've built for growing brands</h2>
+        <p>Selected work. From local businesses to international platforms</p>
+      </div>
+      <div class="portfolio-grid">
+        <article class="work-card">
+          <a href="https://ironpeak-three.vercel.app/" target="_blank">
+            <div class="work-thumb" style="padding:0">
+              <img src="https://image.thum.io/get/width/800/https://ironpeak-three.vercel.app/" alt="Gym Website" style="width:100%;height:100%;object-fit:cover">
+              <div class="work-overlay"><span>View Project →</span></div>
+            </div>
+          </a>
+          <div class="work-meta">
+            <h3>Gym Website</h3>
+            <p>Modern fitness website designed for strong branding, memberships, and engagement.</p>
+            <div class="work-tags"><span>Fitness</span><span>UI/UX</span><span>Responsive</span></div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-thumb" style="display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)">
+            Image Coming Soon
+          </div>
+          <div class="work-meta">
+            <h3>Online Store</h3>
+            <p>E-commerce platform built for product showcase and smooth checkout experience.</p>
+            <div class="work-tags"><span>Store</span><span>E-commerce</span><span>Shop</span></div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <a href="https://rexpro.vercel.app/" target="_blank">
+            <div class="work-thumb" style="padding:0">
+              <img src="https://image.thum.io/get/width/800/https://rexpro.vercel.app/" alt="Construction Website" style="width:100%;height:100%;object-fit:cover">
+              <div class="work-overlay"><span>View Project →</span></div>
+            </div>
+          </a>
+          <div class="work-meta">
+            <h3>Construction Website</h3>
+            <p>Professional website for construction business showcasing services and credibility.</p>
+            <div class="work-tags"><span>Corporate</span><span>Construction</span><span>Business</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section-soft">
+    <div class="container">
+      <div class="headline">
+        <div class="eyebrow">What We’re Good In</div>
+        <h2>Built for real business results</h2>
+        <p>Everything you need to launch, grow, and scale your website professionally.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="card"><div class="card-icon"><i data-lucide="rocket"></i></div><h3>Websites Built for Results</h3><p>Designed with real business goals in mind — not just looks, but conversions.</p></div>
+        <div class="card"><div class="card-icon"><i data-lucide="search"></i></div><h3>On-Page SEO</h3><p>Optimized structure and content so your site can be found on Google.</p></div>
+        <div class="card"><div class="card-icon"><i data-lucide="bar-chart"></i></div><h3>Tracking & Analytics</h3><p>Track visitors, behavior, and performance with analytics tools.</p></div>
+
+        <div class="card"><div class="card-icon"><i data-lucide="monitor-smartphone"></i></div><h3>100% Responsive</h3><p>Perfect on desktop, tablet, and mobile devices.</p></div>
+        <div class="card"><div class="card-icon"><i data-lucide="trending-up"></i></div><h3>ROI-First Approach</h3><p>Built to maximize your return on marketing spend.</p></div>
+        <div class="card"><div class="card-icon"><i data-lucide="layers"></i></div><h3>Full-Service A–Z</h3><p>From idea to launch — design, development, and support.</p></div>
+
+        <div class="card"><div class="card-icon"><i data-lucide="zap"></i></div><h3>Lightning-Fast Load</h3><p>Optimized performance because speed matters.</p></div>
+        <div class="card"><div class="card-icon"><i data-lucide="settings"></i></div><h3>Easy to Edit</h3><p>Simple structure so you can update content anytime.</p></div>
+        <div class="card"><div class="card-icon"><i data-lucide="shield-check"></i></div><h3>Secure & GDPR Ready</h3><p>Built with security, privacy, and compliance in mind.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="container">
+      <div class="headline">
+        <div class="eyebrow">Pricing Preview</div>
+        <h2>Simple, transparent pricing</h2>
+        <p>No hidden fees. No surprises. Choose the package that fits your goals — or reach out for a custom quote.</p>
+      </div>
+      <div class="cards3">
+        <div class="card">
+          <div class="card-icon"><i data-lucide="rocket"></i></div>
+          <h3>Starter</h3>
+          <p>For individuals and small businesses starting their online journey</p>
+          <div class="price">RM 899</div>
+          <div class="list">
+            <div><span>✦</span><span>Basic business website</span></div>
+            <div><span>✦</span><span>1 page Website</span></div>
+            <div><span>✦</span><span>Fully responsive design</span></div>
+            <div><span>✦</span><span>Contact form integration</span></div>
+            <div><span>✦</span><span>Google Maps + social links</span></div>
+            <div><span>✦</span><span>3-day delivery</span></div>
+            <div><span>✦</span><span>Including Hosting & Domain packages</span></div>
+          </div>
+          <a href="#contact" class="btn-secondary" style="margin-top:20px;justify-content:center">Get Started →</a>
+        </div>
+        <div class="card" style="outline:2px solid #dbeafe">
+          <div style="position:absolute;top:18px;right:18px;background:#eff6ff;color:var(--primary);padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:700">★ Most Popular</div>
+          <div class="card-icon"><i data-lucide="gem"></i></div>
+          <h3>Professional</h3>
+          <p>For businesses that need a polished, high-performing digital presence</p>
+          <div class="price">RM1,299</div>
+          <div class="list">
+            <div><span>✦</span><span>Custom premium design</span></div>
+            <div><span>✦</span><span>3 to 5 pages</span></div>
+            <div><span>✦</span><span>SEO optimized (on-page)</span></div>
+            <div><span>✦</span><span>CMS integration (WordPress)</span></div>
+            <div><span>✦</span><span>E-commerce ready (Shopify)</span></div>
+            <div><span>✦</span><span>Google Analytics setup</span></div>
+            <div><span>✦</span><span>2-week delivery</span></div>
+            <div><span>✦</span><span>Excluding Hosting & Domain packages</span></div>
+          </div>
+          <a href="#contact" class="btn-primary" style="margin-top:20px;justify-content:center">Get Started →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="building-2"></i></div>
+          <h3>Enterprise</h3>
+          <p>Full custom web applications and complex digital solutions</p>
+          <div class="price">Get Quote</div>
+          <div class="list">
+            <div><span>✦</span><span>Full custom web application</span></div>
+            <div><span>✦</span><span>Unlimited pages & features</span></div>
+            <div><span>✦</span><span>API & third-party integrations</span></div>
+            <div><span>✦</span><span>Custom database design</span></div>
+            <div><span>✦</span><span>Priority dedicated support</span></div>
+            <div><span>✦</span><span>Post-launch maintenance plan</span></div>
+            <div><span>✦</span><span>Custom timeline</span></div>
+          </div>
+          <a href="#contact" class="btn-secondary" style="margin-top:20px;justify-content:center">Let's Talk →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <div class="headline">
+        <div class="eyebrow">Testimonials</div>
+        <h2>What clients say about our work</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="card"><p class="quote">“The website made our brand look premium and increased inquiries immediately.”</p><div class="author"><div class="avatar">AR</div><div><strong>Aina Rahman</strong><span>Business Owner</span></div></div></div>
+        <div class="card"><p class="quote">“Fast delivery, clean UI, and very professional service.”</p><div class="author"><div class="avatar">MK</div><div><strong>Marcus Kelvin</strong><span>Agency Founder</span></div></div></div>
+        <div class="card"><p class="quote">“Our conversion improved after redesign. Highly recommended.”</p><div class="author"><div class="avatar">SN</div><div><strong>Siti Nadia</strong><span>Manager</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section-soft">
+    <div class="container">
+      <div class="headline">
+        <div class="eyebrow">Good to know</div>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-wrap">
+        <div class="faq-item"><div class="faq-question"><h3>Why RYT Technologies?</h3></div><div class="faq-answer">We focus on real business results, not just design.</div></div>
+        <div class="faq-item"><div class="faq-question"><h3>How long does it take?</h3></div><div class="faq-answer">Usually 1–3 weeks depending on scope.</div></div>
+        <div class="faq-item"><div class="faq-question"><h3>How much does a website cost?</h3></div><div class="faq-answer">Prices vary depending on features, starting from RM899.</div></div>
+        <div class="faq-item"><div class="faq-question"><h3>What technologies does RYT Technologies use?</h3></div><div class="faq-answer">We use modern frameworks and scalable technologies.</div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Are RYT Technologies websites SEO-optimized?</h3></div><div class="faq-answer">Yes, all websites follow SEO best practices.</div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Do you offer in-person consultations?</h3></div><div class="faq-answer">Yes, depending on location.</div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Why not use Wix or Squarespace?</h3></div><div class="faq-answer">Custom-built websites offer more flexibility and scalability.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="background:#f8fafc">
+    <div class="container about-wrap">
+      <div class="card founder-card">
+        <div class="founder-visual" style="padding:20px">
+          <img src="/RYT Technologies Website/img/founder2.png" alt="Founder" class="founder-photo">
+        </div>
+      </div>
+      <div class="card founder-meta">
+        <div class="eyebrow" style="color:#2563eb;font-weight:700;text-transform:uppercase">Meet the Founder</div>
+        <h3>THINES VARMA</h3>
+        <div class="role">Founder & Lead Developer</div>
+        <p>One mind. Clear execution. I’m Thines Varma — the sole mind behind RYT Technologies. RYT Technologies is built differently. No layers. No delays. No compromises.
+          We handle everything professionally from strategy to design and development & ensuring every detail is intentional and every result delivers impact.
+          This isn’t about building “just a website.” </p><br>
+           <p>It’s about creating something that represents your business properly. Make your business look professional, trustworthy, and ready to grow online.</p><br>
+        <p>Clean. Fast. Effective.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-shell">
+        <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center">
+          <div>
+            <div style="color:#22c55e;font-size:.85rem;margin-bottom:10px">Get in touch</div>
+            <h2 style="font-family:'Syne';font-size:3rem;line-height:1.1">Ready for your<br>project?</h2>
+            <p style="margin-top:14px;color:var(--muted)">Let's get started together. Send me a request and receive a response within 12 hours.</p>
+          </div>
+          <div class="contact-side-card">
+            <div class="logo-text modern-logo luxury">
+              <span class="ryt">RYT</span>
+              <span class="tech">TECHNOLOGIES</span>
+            </div>
+            <p style="color:var(--muted)">Web Design & Software Development</p>
+            <div style="margin-top:14px;padding:6px 12px;border-radius:999px;background:#ecfdf5;color:#16a34a;display:inline-block">● Available for new projects</div>
+            <p style="margin-top:16px;color:var(--muted)">Malaysia</p>
+            <div style="margin-top:18px;display:flex;gap:14px">
+              <a href="https://wa.me/60112690658" target="_blank" class="social-link" aria-label="WhatsApp"> <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp"></a>
+              <a href="#" class="social-link" aria-label="Instagram"> <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram"></a>
+              <a href="#" class="social-link" aria-label="LinkedIn"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="22" height="22"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="inquiry-wrap">
+          <div class="inquiry-form">
+
+            <h3>Inquiry Form</h3>
+            <p>Tell us about your project and we’ll get back to you with the right next step.</p>
+
+            <form id="contactForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Full Name</label>
+                  <input id="name" type="text" placeholder="Your full name" name="name" required>
+                </div>
+
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input id="email" type="email" placeholder="you@example.com" name="email" required>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone Number</label>
+                  <input id="phone" type="tel" placeholder="+60 12-345 6789" name="phone">
+                </div>
+
+                <div class="field">
+                  <label for="service">Service Needed</label>
+                  <select id="service" name="service">
+                    <option>Business Website</option>
+                    <option>Landing Page</option>
+                    <option>E-Commerce Website</option>
+                    <option>Web Application</option>
+                    <option>Website Redesign</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field" style="margin-top:14px">
+                <label for="message">Project Details</label>
+                <textarea id="message" placeholder="Share your goals, timeline, features, and anything important about your project." name="message"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <span class="form-note">We usually respond within 12 hours.</span>
+                <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
+              </div>
+              <div class="msg" id="formMessage"></div>
+            </form>
+          </div>
+        </div>
+
+        <div style="margin-top:30px;padding:20px;border:1px solid var(--border);border-radius:20px;color:var(--muted);background:#fff">Our Location<br>Malaysia</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>RYT Technologies © 2026</div>
+      <div class="footer-links">
+        <a href="#">Cookie Settings</a>
+        <span>|</span>
+        <a href="#services">Services</a>
+        <span>|</span>
+        <a href="#about">About</a>
+        <span>|</span>
+        <a href="#work">Testimonials</a>
+        <span>|</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
 <script>
-document.getElementById('cform').addEventListener('submit',e=>{
- e.preventDefault();
- alert('Thanks! We’ll reply shortly.');
- e.target.reset();
-});
+  lucide.createIcons();
+
+  // simple scroll animation
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.style.opacity=1;
+        entry.target.style.transform='translateY(0)';
+      }
+    });
+  },{threshold:0.1});
+
+  document.querySelectorAll('section, .card, .work-card').forEach(el=>{
+    el.style.opacity=0;
+    el.style.transform='translateY(30px)';
+    el.style.transition='all .6s ease';
+    observer.observe(el);
+  });
+</script>
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbz8BbdlddXZNBQ8XRYqBD9OKJ075LotNlbrSA2xycidrkuKht3lMwwjuCaeUMd6jOpXrw/exec";
+  const form = document.getElementById("contactForm");
+  const messageBox = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    messageBox.textContent = "Sending...";
+    messageBox.className = "msg";
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form)
+      });
+
+      const text = await response.text();
+      console.log("Raw server response:", text);
+
+      const result = JSON.parse(text);
+
+      if (result.result === "success") {
+        messageBox.textContent = "Message sent successfully.";
+        messageBox.className = "msg success";
+        form.reset();
+      } else {
+        messageBox.textContent = "Error sending message: " + (result.message || "Unknown error");
+        messageBox.className = "msg error";
+      }
+    } catch (error) {
+      console.error(error);
+      messageBox.textContent = "Error sending message: " + error.message;
+      messageBox.className = "msg error";
+    }
+  });
 </script>
 </body>
 </html>
